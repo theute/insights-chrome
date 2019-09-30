@@ -83,7 +83,7 @@ class Navigation extends Component {
         }
 
         return (
-            <Nav onSelect={this.onSelect} aria-label="Insights Global Navigation" data-ouia-safe="true" theme="dark">
+            <Nav onSelect={this.onSelect} className='pf-c-page__sidebar-body' aria-label="Insights Global Navigation" data-ouia-safe="true" theme="dark">
                 <NavList>
                     {
                         settings.map((item, key) => {
