@@ -1,19 +1,21 @@
 {
   "presets": [
-      [
-        "@babel/env",
-        {
-            "targets": "> 0.25%, not dead"
-        }
-    ],
-    "@babel/react"
+      "@babel/react",
+      "@babel/env"
   ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "transform-inline-environment-variables",
-    ["@babel/plugin-syntax-dynamic-import", {}, "syntax-dynamic"],
-    "@babel/plugin-syntax-object-rest-spread",
-    "@babel/plugin-transform-runtime"
+      [
+          "@babel/plugin-proposal-decorators",
+          {
+              "legacy": true
+          }
+      ],
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-transform-async-to-generator",
+      "lodash"
   ],
   "env": {
     "test": {

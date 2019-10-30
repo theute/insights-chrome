@@ -1,6 +1,6 @@
-const analytics = require('./analytics');
-const user      = require('./jwt/insights/user');
-const token     = require('../../testdata/token.json');
+import analytics from './analytics';
+import user from './jwt/insights/user';
+import token from '../../testdata/token.json'
 
 describe('User + Analytics', () => {
     const getPendoConf = analytics.__get__('getPendoConf');
@@ -19,5 +19,5 @@ describe('User + Analytics', () => {
                 }
             });
         });
-    });
+    })
 });

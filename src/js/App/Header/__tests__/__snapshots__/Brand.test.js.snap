@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Brand component should render correctly 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Brand
+    navHidden={false}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    toggleNav={[Function]}
+  />
+</ContextProvider>
+`;
