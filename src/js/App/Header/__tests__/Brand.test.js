@@ -1,34 +1,32 @@
 import React from 'react';
-// import { BrowserRouter as Router } from 'react-router-dom';
+import {Provider} from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Brand from '../Brand';
+import { Brand } from '../Brand';
 
 const mockStore = configureMockStore();
 
 describe('Brand component', () => {
 
-    let store;
+    const mockOnClick = jest.fn();
 
-    beforeEach(() => {
-        const initialState = {
-            chrome: {
-                navHidden: false,
-                toggleNav: {}
-            }
-        };
+    const initialState = {
+        chrome: {
+            navHidden: false,
+            toggleNav: () => { return; }
+        }
+    }
 
-        store = mockStore(initialState);
-    });
+    const store = mockStore(initialState);
 
     it('should render correctly', () => {
-        const wrapper = shallow(
-            <Brand store={ store } />
+        const wrapper = mount(
+            <Provider store={store}>
+                <Brand/>
+            </Provider>
         );
+        const component = wrapper.dive();
         expect(toJson(wrapper)).toMatchSnapshot();
     });
-
-    // TODO: Simulate button click
-
 });
